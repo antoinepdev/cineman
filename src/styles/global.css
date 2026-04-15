@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: #F97316;
+ --color-primary-light: #FF8C42;
+  --color-secondary: #3B82F6;
+  --color-background: #0A0A0F;
+  --color-surface: #18181B;
+  --color-title: #F4F4F5;
+  --color-subtitle: #A1A1AA;
+  --color-neutral: #27272A;
+
+  --spacing-element: 0.2rem;
+  --spacing-component: 0.5rem;
+  --spacing-card: 1rem;
+  --spacing-container: 2rem;
+  --spacing-section: 4rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page-container {
+  @apply px-container;
+}
+
+.section-title {
+  @apply text-3xl font-semibold text-center text-title underline m-container;
+}
+
+.btn-primary {
+  @apply text-title py-element px-component md:py-card md:px-container rounded-xl bg-primary hover:bg-primary-light;
+}
+
+.btn-secondary {
+  @apply border text-title py-element px-component md:py-card md:px-container rounded-xl w-32.75;
+}
+
+
+.movie-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill,
+      minmax(260px, 1fr));
+  @apply gap-card;
+}
