@@ -1,5 +1,6 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
 ---
 <!doctype html>
 <html lang="es">
@@ -10,5 +11,7 @@ import '../styles/global.css';
 	</head>
   <body class="px-container absolute top-0 z-[-2] h-screen w-screen bg-background bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]">
    	<slot />
+    <div class="border-t-2 mx-auto border-t-neutral w-full md:w-3/4 my-container"></div>
+    <Footer />
 	</body>
 </html>
