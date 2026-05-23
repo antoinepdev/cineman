@@ -1,31 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Features from '../components/Features.astro';
-// import MovieItem from '../components/MovieItem.astro';
-import Footer from '../components/Footer.astro';
-// import { searchMovies } from '../helpers/searchMovie';
-
-// const movies = await searchMovies('life is');
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
+import Footer from "../components/Footer.astro";
+import Catalog from "../components/Catalog.astro";
+import movies from "../movies/movies.json";
 ---
 
 <Layout>
   <Hero />
   <Features />
-  <!-- <section class="mt-section"> -->
-  <!--   <h2 class="section-title">Lista de Películas | Catálogo</h2> -->
-  <!--   <div class="relative"> -->
-  <!--     <div class="movie-grid from-background bg-linear-to-t via-[bg-background]/70 to-transparent"> -->
-  <!--       {movies.map(movie => ( -->
-  <!--         <MovieItem movie={movie}/>  -->
-  <!--       ))}  -->
-  <!--     </div> -->
-  <!--     <div class="absolute bottom-0 to-background from-transparent bg-linear-to-b h-60 w-full"></div> -->
-  <!--   </div> -->
-  <!--   <div class="my-container flex justify-center"> -->
-  <!--     <button class="btn-primary">Ver todo el catálogo</button> -->
-  <!--   </div> -->
-  <!-- </section>  -->
+  <Catalog movies={movies} catalog='Standard v0'/>
   <div class="border-t-2 mx-auto border-t-neutral w-full md:w-3/4 my-container"></div>
   <Footer />
 </Layout>

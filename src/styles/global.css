@@ -3,14 +3,13 @@
 
 @theme {
   --color-primary: #F97316;
- --color-primary-light: #FF8C42;
+  --color-primary-light: #FF8C42;
   --color-secondary: #3B82F6;
   --color-background: #0A0A0F;
   --color-surface: #18181B;
   --color-title: #F4F4F5;
   --color-subtitle: #A1A1AA;
   --color-neutral: #27272A;
-
   --spacing-element: 0.2rem;
   --spacing-component: 0.5rem;
   --spacing-card: 1rem;
@@ -40,9 +39,25 @@
 
 
 .movie-grid {
-  display: grid;
-  width: 100%;
+  @apply grid w-full gap-card;
   grid-template-columns: repeat(auto-fill,
       minmax(260px, 1fr));
-  @apply gap-card;
+}
+
+.card-spacing {
+  transition: padding 0.2s;
+}
+
+.card-content {
+  padding-top: 80px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 12%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 12%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 12%);
+  height: 100vh;
+}
+
+.movie-card:hover .card-content {
+  transform: translateY(-200px);
 }

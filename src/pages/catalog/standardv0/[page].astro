@@ -1,0 +1,22 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import MovieCard from "../../../components/ui/MovieCard.astro";
+import movies from "../../../movies/movies.json";
+
+export function getStaticPaths({ paginate }) {
+  const catalogMovies = movies.filter((m) => m.catalog === "Standard v0");
+
+  return paginate(catalogMovies, { pageSize: 20 });
+}
+const { page } = Astro.props;
+---
+<Layout>
+  <h1 class="text-title section-title">Catálogo Standard V0 | Lista</h1>
+
+<section class="relative w-full">
+  <div class="flex flex-wrap justify-center gap-card from-background  bg-linear-to-t via-[bg-background]/70 to-transparent">
+    {page.data.map(movie => ( <MovieCard movie={movie}/> ))} 
+  </div>
+  <div class="absolute bottom-0 to-background from-transparent bg-linear-to-b h-60 w-full"></div>
+</section>
+</Layout>

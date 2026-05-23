@@ -1,0 +1,32 @@
+---
+import MovieCard from "./ui/MovieCard.astro";
+import type { Movie } from "../types.ts";
+
+interface Props {
+  movies: Movie[];
+  catalog: string;
+}
+const { movies, catalog }: Props = Astro.props;
+const filteredMovies = movies.filter((m) => m.catalog === catalog);
+const catalogMovies = filteredMovies.slice(0, 12);
+const moviesLength = filteredMovies.length;
+const languagesAvaible = "Español Latino, Español Castellano";
+---
+<section class="mt-section mb-card flex flex-col items-center">
+  <h2 class="section-title mb-card!">Catálogo Estándar</h2>
+  <div class="text-center">
+    <p class="text-title">Cantidad de películas: {moviesLength}</p>
+    <p class="text-title">Idiomas: {languagesAvaible}</p>
+    <p class="text-subtitle mt-component prose">Creado apartir de las recomendaciones de usuarios, incluye la mayoría de películas populres y es la opción ideal para la mayoría de usuarios.</p>
+  </div>
+</section>
+
+<section class="relative">
+  <div class="flex flex-wrap justify-center gap-card">
+    {catalogMovies.map(movie => ( <MovieCard movie={movie}/> ))} 
+  </div>
+</section>
+
+<div class="my-container flex justify-center">
+  <a class="btn-primary" href='/cineman/catalog/standardv0/1'>Ver todo el catálogo</a>
+</div>
