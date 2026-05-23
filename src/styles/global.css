@@ -30,11 +30,11 @@
 }
 
 .btn-primary {
-  @apply text-title py-element px-component md:py-card md:px-container rounded-xl bg-primary hover:bg-primary-light;
+  @apply text-title py-element px-component md:py-card md:px-container rounded-xl bg-primary hover:bg-primary-light hover:scale-105 transition;
 }
 
 .btn-secondary {
-  @apply border text-title py-element px-component md:py-card md:px-container rounded-xl w-32.75;
+  @apply border text-title py-element px-component md:py-card md:px-container rounded-xl;
 }
 
 
@@ -60,4 +60,13 @@
 
 .movie-card:hover .card-content {
   transform: translateY(-200px);
+}
+
+
+.active-pagination-btn {
+  @apply bg-primary text-title rounded px-card py-component underline flex items-center hover:bg-primary-light hover:scale-105 transition
+}
+
+.inactive-pagination-btn {
+  @apply text-subtitle rounded px-card py-component underline flex items-center
 }
