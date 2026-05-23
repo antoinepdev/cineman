@@ -1,0 +1,21 @@
+---
+import type { Movie } from "../../types.ts";
+
+interface Props {
+  movie: Movie;
+}
+
+const { movie }: Props = Astro.props;
+let mainTitle = movie.title;
+if (movie.title_es[0]) mainTitle = movie.title_es[0];
+else if (movie.title_es[1]) mainTitle = movie.title_es[1];
+---
+<article class="bg-surface movie-card rounded-2xl h-100 w-72 overflow-hidden relative z-1" id="movie"> 
+    <img class="absolute -z-10 opacity-80" src={movie.poster} alt={mainTitle} />
+    <div class="pt-52 hover:pt-0"></div>
+    <div class="card-content transform duration-400 ease-out">
+    <h2 class="text-title">{mainTitle} ({movie.year})</h2>
+    <p class="text-subtitle">{movie.language.join('\n')}</p>
+    <div class="pl-element text-subtitle prose">{movie.description}</div>
+  </div>
+</article>
