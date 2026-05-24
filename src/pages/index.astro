@@ -4,10 +4,11 @@ import Hero from "../components/Hero.astro";
 import Features from "../components/Features.astro";
 import Catalog from "../components/Catalog.astro";
 import movies from "../movies/movies.json";
+const filteredMovies = movies.filter((m) => m.catalog === "Standard v0");
 ---
 
 <Layout>
-  <Hero />
+  <Hero moviesLength={filteredMovies.length}/>
   <Features />
   <Catalog movies={movies} catalog='Standard v0'/>
 </Layout>
