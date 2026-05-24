@@ -6,9 +6,12 @@ interface Props {
   movies: Movie[];
   catalog: string;
 }
+
 const { movies, catalog }: Props = Astro.props;
 const filteredMovies = movies.filter((m) => m.catalog === catalog);
+filteredMovies.sort((a, b) => b.year - a.year);
 const catalogMovies = filteredMovies.slice(0, 12);
+
 const moviesLength = filteredMovies.length;
 const languagesAvaible = "Español Latino, Español Castellano";
 ---
