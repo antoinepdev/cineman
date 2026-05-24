@@ -34,7 +34,7 @@
 }
 
 .btn-secondary {
-  @apply border text-title py-element px-component md:py-card md:px-container rounded-xl;
+  @apply border text-title py-element px-component md:py-card md:px-container rounded-xl hover:scale-105 transition
 }
 
 
