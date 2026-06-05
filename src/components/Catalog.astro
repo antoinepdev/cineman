@@ -8,11 +8,9 @@ interface Props {
 }
 
 const { movies, catalog }: Props = Astro.props;
-const filteredMovies = movies.filter((m) => m.catalog === catalog);
-filteredMovies.sort((a, b) => b.year - a.year);
-const catalogMovies = filteredMovies.slice(0, 12);
+const catalogMovies = movies.slice(0, 12);
 
-const moviesLength = filteredMovies.length;
+const moviesLength = movies.length;
 const languagesAvaible = "Español Latino, Español Castellano";
 ---
 <section class="mt-section mb-card flex flex-col items-center">

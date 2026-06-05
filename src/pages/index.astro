@@ -4,11 +4,12 @@ import Hero from "../components/Hero.astro";
 import Features from "../components/Features.astro";
 import Catalog from "../components/Catalog.astro";
 import movies from "../movies/movies.json";
-const filteredMovies = movies.filter((m) => m.catalog === "Standard v0");
+
+movies.sort((a, b) => b.year - a.year);
 ---
 
 <Layout>
-  <Hero moviesLength={filteredMovies.length}/>
+  <Hero moviesLength={movies.length}/>
   <Features />
   <Catalog movies={movies} catalog='Standard v0'/>
 </Layout>
