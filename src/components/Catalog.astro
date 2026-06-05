@@ -7,7 +7,7 @@ interface Props {
   catalog: string;
 }
 
-const { movies, catalog }: Props = Astro.props;
+const { movies }: Props = Astro.props;
 const catalogMovies = movies.slice(0, 12);
 
 const moviesLength = movies.length;
